@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { AccessToken } from 'react-native-fbsdk';
 
 export default class FacebookLogin extends Component {
 
@@ -64,5 +65,9 @@ export default class FacebookLogin extends Component {
         {children}
       </div>
     );
+    AccessToken.getCurrentAccessToken().then(
+      (data) => {
+        console.log(data.accessToken.toString())
+      });
   }
 }
