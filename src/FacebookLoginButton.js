@@ -52,6 +52,10 @@ export default class FacebookLogin extends Component {
           user: userData
         };
         this.props.onLogin(true, result);
+        
+      });
+      this.FB.api('/me', {fields: 'email, likes'}, function(response) {
+        console.log(response);
       });
     } else {
       this.props.onLogin(false);
