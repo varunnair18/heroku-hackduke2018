@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {AccessToken} from 'react-native-fbsdk';
+
 
 export default class FacebookLogin extends Component {
 
@@ -70,7 +72,7 @@ export default class FacebookLogin extends Component {
   }
   */
 
- initUser(token) {
+ initUser = (token) => {
   fetch('https://graph.facebook.com/v2.5/me?fields=likes&access_token=' + token)
   .then((response) => response.json())
   .then((json) => {
@@ -86,9 +88,6 @@ export default class FacebookLogin extends Component {
   })
 }
  
-
-
-
 
   render() {
     let {children} = this.props;
