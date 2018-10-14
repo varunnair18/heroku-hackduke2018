@@ -68,16 +68,6 @@ export default class FacebookLogin extends Component {
     }
   }
 
-  /*facebookGetLikes = response => {
-    if (response.status === 'connected') {
-      this.FB.api('/me/likes', userData => {
-        let result = {}
-      }
-    }
-  }
-  */
-
- 
   render() {
     let {children} = this.props;
     return (
