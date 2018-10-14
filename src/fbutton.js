@@ -32,16 +32,11 @@ class Fbutton extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">React Social Media Login</h1>
-        </header>
-
         <div className="App-intro">
           { !username &&
             <div>
-              <p>Click on one of any button below to login</p>
               <FacebookLoginButton onLogin={this.onFacebookLogin}>
-                <button> Facebook</button>
+                <button> Link to Facebook</button>
               </FacebookLoginButton>
             </div>
           }

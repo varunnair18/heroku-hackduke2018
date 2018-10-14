@@ -10,7 +10,7 @@ const donorPrivacy = '&donorPrivacy=';
 const stat = '&state=';
 const searchy = '&search=';
 
-const search = ['alzheimer', 'dog', 'orphan', 'daddy','firefighter'];
+const search = ['Dogs', 'Basketball', 'Alzheimers','Education', 'Cancer'];
 
 class Charity extends Component {
     
@@ -25,14 +25,29 @@ class Charity extends Component {
 	  name: [],
 	  tagLine:[],
 	  mission:[],
+	  inputValue: ''
       };
   }
-
+  	// fetchy() {
+	// 	var ur = API+rated+sort+pageSize
+	//     +donorPrivacy+this.state.donorPriv
+	//     +stat+this.state.stat
+	// 	fetch(ur+searchy+this.state.inputValue)
+	// 	.then(response => response.json())
+	// 	.then(response => response[0]) 
+	// 	.then(data => this.setState({
+	// 		url: this.state.url.concat([data.websiteURL]),
+	// 		name: this.state.name.concat([data.charityName]),
+	// 		tagLine: this.state.tagLine.concat([data.tagLine]),
+	// 		mission: this.state.mission.concat([data.mission])}));
+		
+	// 	}
+	  
     componentDidMount() {
 	
-	{/*
-	   must have set donorPriv and stat at this point 
-	 */}
+	// {/*
+	//    must have set donorPriv and stat at this point 
+	//  */}
 	
 	var ur = API+rated+sort+pageSize
 	    +donorPrivacy+this.state.donorPriv
@@ -51,11 +66,22 @@ class Charity extends Component {
 
 	}
 
-    }
-
+	
+	
+	// fetch(ur+searchy+this.state.inputValue)
+	// .then(response => response.json())
+	// .then(response => response[0]) 
+	// .then(data => this.setState({
+	// 	url: this.state.url.concat([data.websiteURL]),
+	// 	name: this.state.name.concat([data.charityName]),
+	// 	tagLine: this.state.tagLine.concat([data.tagLine]),
+	// 	mission: this.state.mission.concat([data.mission])}));
+	// this.fetchy()
+	}
       render() {
 	  
 	  var lis = [];
+
 	  for (var i = 0; i < search.length; i++) {
 	      lis.push(
 		  		  <div>
@@ -63,11 +89,31 @@ class Charity extends Component {
 	      <h1> <a href={this.state.url[i]}> Website </a> </h1>
 	      <h1> {this.state.tagLine[i]} </h1> <br/>
 		      </div>
-	      )
+		  )
 	  }
 	  
 	  return (lis);
 
+	
+	// return(
+	// <input value={this.state.inputValue} onChange = {evt => this.updateInputValue(evt)}/>
+	// )
+// 	return (
+// 		<div>
+// {this.state.inputValue}
+// 			<input value={this.state.inputValue} onChange = {evt => this.updateInputValue(evt)}/>
+
+// 			</div>
+// 	)
+
+  }
+  updateInputValue(evt) {
+	  console.log(evt.target.value)
+	  
+    this.setState({
+      inputValue: evt.target.value
+	});
+	// this.fetchy()
   }
 }
 
