@@ -23,7 +23,8 @@ class App extends Component {
         username: resultObject.user.name
       });
     } else {
-      alert('Facebook login error');
+      //alert('Facebook login error');
+      console.log("else");
     }
   }
   render() {
@@ -40,7 +41,7 @@ class App extends Component {
             <div>
               <p>Click on one of any button below to login</p>
               <FacebookLoginButton onLogin={this.onFacebookLogin}>
-                <button onClick = {alert('Button clicked')}>Facebook</button>
+                <button> Facebook</button>
               </FacebookLoginButton>
             </div>
           }
