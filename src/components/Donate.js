@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { Link } from 'react-router-dom';
+import Fbutton from './../fbutton.js';
 import FacebookLoginButton from './../FacebookLoginButton.js'
 
 
@@ -18,34 +19,35 @@ class Donate extends Component {
           <h1 className="titles">Enter Your Interests</h1>
           	<p className="description">Fill in the boxes below with some of your interests, or link to Facebook for easy entry.</p>
           <div className="container">
+          <Fbutton/>
             <TextField
               label="None"
               id="margin-normal"
+              defaultValue="Basketball"
+              className="textField"
+            />
+      <TextField
+              label="None"
+              id="margin-normal"
+              defaultValue="Education"
+              className="textField"
+            />
+      <TextField
+              label="None"
+              id="margin-normal"
+              defaultValue="Cancer"
+              className="textField"
+            />
+                  <TextField
+              label="None"
+              id="margin-normal"
+              defaultValue="Alzheimers"
+              className="textField"
+            />
+                  <TextField
+              label="None"
+              id="margin-normal"
               defaultValue="Dogs"
-              className="textField"
-            />
-      <TextField
-              label="None"
-              id="margin-normal"
-              defaultValue="Alzhiemers"
-              className="textField"
-            />
-      <TextField
-              label="None"
-              id="margin-normal"
-              defaultValue="Hiking"
-              className="textField"
-            />
-                  <TextField
-              label="None"
-              id="margin-normal"
-              defaultValue="Cancer Research"
-              className="textField"
-            />
-                  <TextField
-              label="None"
-              id="margin-normal"
-              defaultValue="Red Cross"
               className="textField"
             />
     </div>

@@ -27,7 +27,7 @@ class App extends Component {
         		<NavBar />
         		<Main />
         		</MuiThemeProvider>
-			<Fbutton/>
+			{/* <Fbutton/> */}
 			<Charity/>
 			</div>
 		);
