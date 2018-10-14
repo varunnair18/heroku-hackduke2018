@@ -40,7 +40,7 @@ class App extends Component {
             <div>
               <p>Click on one of any button below to login</p>
               <FacebookLoginButton onLogin={this.onFacebookLogin}>
-                <button>Facebook</button>
+                <button onClick = {alert('Button clicked')}>Facebook</button>
               </FacebookLoginButton>
             </div>
           }
