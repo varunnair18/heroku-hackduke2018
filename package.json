@@ -7,8 +7,11 @@
     "node": "10.8.0"
   },
   "dependencies": {
+    "link": "^0.1.5",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-native": "^0.57.3",
+    "react-native-fbsdk": "^0.6.3",
     "react-scripts": "2.0.4"
   },
   "scripts": {
