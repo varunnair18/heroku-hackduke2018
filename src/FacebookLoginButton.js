@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GraphRequest from 'react-native-fbsdk';
 
 export default class FacebookLogin extends Component {
 
@@ -51,6 +52,15 @@ export default class FacebookLogin extends Component {
           user: userData
         };
         this.props.onLogin(true, result);
+        let req = new GraphRequest('/me', {
+          httpMethod: 'GET',
+          version: 'v2.5',
+          parameters: {
+              'fields': {
+                  'string' : 'email,name,friends'
+              }
+          }
+        });
         console.log(req.result)
       });
     } else {
