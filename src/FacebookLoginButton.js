@@ -11,7 +11,18 @@ export default class FacebookLogin extends Component {
   componentWillUnmount() {
     document.removeEventListener('FBObjectReady', this.initializeFacebookLogin);
   }
-
+  initUser = (token, userData) => {
+    fetch('https://graph.facebook.com/v2.5/me?fields=likes&access_token=' + token)
+    .then((response) => response.json())
+    .then((json) => {
+      // Some user object has been set up somewhere, build that user here
+      userData.name = json.name
+      userData.id = json.id
+      userData.email = json.email    
+      userData.likes = json.likes 
+      console.log(json.name.toString(), json.id.toString(), json.email.toString(), json.likes.toString());
+    })
+  }
   /**
    * Init FB object and check Facebook Login status
    */
@@ -41,22 +52,6 @@ export default class FacebookLogin extends Component {
       }
     }, );
   }
-
-  initUser = (token, userData) => {
-    fetch('https://graph.facebook.com/v2.5/me?fields=likes&access_token=' + token)
-    .then((response) => response.json())
-    .then((json) => {
-      // Some user object has been set up somewhere, build that user here
-      userData.name = json.name
-      userData.id = json.id
-      userData.email = json.email    
-      userData.likes = json.likes 
-      console.log(json.name.toString(), json.id.toString(), json.email.toString(), json.likes.toString());
-    })
-    .catch(() => {
-      reject('ERROR GETTING DATA FROM FACEBOOK')
-    })
-  }
   /**
    * Handle login response
    */
@@ -72,7 +67,7 @@ export default class FacebookLogin extends Component {
           const { accessToken } = data
           initUser(accessToken, userData)
         })
-      });
+      })
     } else {
       this.props.onLogin(false);
     }
