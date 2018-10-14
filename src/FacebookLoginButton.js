@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AccessToken } from 'react-native-fbsdk';
+//import { AccessToken } from 'react-native-fbsdk';
 
 export default class FacebookLogin extends Component {
 
