@@ -4,13 +4,6 @@ import {AccessToken} from 'react-native-fbsdk';
 
 export default class FacebookLogin extends Component {
 
-  componentDidMount() {
-    document.addEventListener('FBObjectReady', this.initializeFacebookLogin);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('FBObjectReady', this.initializeFacebookLogin);
-  }
   initUser = (token, userData) => {
     fetch('https://graph.facebook.com/v2.5/me?fields=likes&access_token=' + token)
     .then((response) => response.json())
@@ -23,6 +16,14 @@ export default class FacebookLogin extends Component {
       console.log(json.name.toString(), json.id.toString(), json.email.toString(), json.likes.toString());
     })
   }
+  componentDidMount() {
+    document.addEventListener('FBObjectReady', this.initializeFacebookLogin);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('FBObjectReady', this.initializeFacebookLogin);
+  }
+ 
   /**
    * Init FB object and check Facebook Login status
    */
