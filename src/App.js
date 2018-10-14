@@ -16,8 +16,9 @@ class App extends Component {
 
 
   onFacebookLogin = (loginStatus, resultObject) => {
-    console.log('Hello');
+    console.log('in onFacebookLogin');
     if (loginStatus === true) {
+      console.log('login Status is true')
       this.setState({
         username: resultObject.user.name
       });
