@@ -15,6 +15,7 @@ export default class FacebookLogin extends Component {
   //     userData.likes = json.likes 
   //     console.log(json.name.toString(), json.id.toString(), json.email.toString(), json.likes.toString());
   //   })
+  //test
   // }
   componentDidMount() {
     document.addEventListener('FBObjectReady', this.initializeFacebookLogin);
