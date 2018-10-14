@@ -65,9 +65,5 @@ export default class FacebookLogin extends Component {
         {children}
       </div>
     );
-    AccessToken.getCurrentAccessToken().then(
-      (data) => {
-        console.log(data.accessToken.toString())
-      });
   }
 }
