@@ -11,7 +11,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-native": "^0.57.3",
-    "react-native-fbsdk": "^0.6.0",
+    "react-native-fbsdk": "^0.8.0",
     "react-scripts": "2.0.4"
   },
   "scripts": {
