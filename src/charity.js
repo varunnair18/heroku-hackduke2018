@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 
 const API = 'https://api.data.charitynavigator.org/v2/Organizations?app_id=13c66db4&app_key=443d1b17b656804edeef8d1dbdd40b67';
-const rated = '&rated=true';
+//const rated = '&rated=true';
 const pageSize = '&pageSize=1';
-const sort = '&sort=RATING%3ADESC';
+//const sort = '&sort=RATING%3ADESC';
 
 const donorPrivacy = '&donorPrivacy=';
 const stat = '&state=';
@@ -49,7 +49,7 @@ class Charity extends Component {
 	//    must have set donorPriv and stat at this point 
 	//  */}
 	
-	var ur = API+rated+sort+pageSize
+	var ur = API+pageSize
 	    +donorPrivacy+this.state.donorPriv
 	    +stat+this.state.stat
 	
