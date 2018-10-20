@@ -59,7 +59,7 @@ class Charity extends Component {
 		.then(response => response.json())
 		.then(response => response[0]) 
 		.then(data => this.setState({
-		    url: this.state.url.concat([data.websiteURL]),
+		    url: this.state.url.concat([data.charityNavigatorURL]),
 		    name: this.state.name.concat([data.charityName]),
 		    tagLine: this.state.tagLine.concat([data.tagLine]),
 		    mission: this.state.mission.concat([data.mission])}));
@@ -92,8 +92,8 @@ class Charity extends Component {
 		  )
 	  }
 	  
-	  //return (lis);
-	  return(null);
+	  return (lis);
+	  //return(null);
 
 	
 	// return(
